@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation | Savio & Rose Style</title>
+    
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold-primary: #c5a059;
+            --gold-light: #f1d299;
+            --dark-accent: #2c2c2c;
+            --bg-cream: #fdfbf7;
+            --transition-slow: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--dark-accent);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Smooth Scroll Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition-slow);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('output-onlinepngtools.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            pointer-events: none;
+        }
+
+        .save-the-date {
+            font-size: 0.9rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .couple-names {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3.5rem, 10vw, 6rem);
+            color: var(--gold-light);
+            margin: 10px 0;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero-date {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            letter-spacing: 3px;
+            margin-top: 20px;
+        }
+
+        /* --- INVITATION SECTION --- */
+        .content-section {
+            padding: 100px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold-primary);
+            margin-bottom: 30px;
+        }
+
+        .invite-text {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 50px;
+            font-style: italic;
+        }
+
+        /* --- COUNTDOWN TIMER --- */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        .count-box {
+            background: white;
+            width: 85px;
+            padding: 20px 10px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--gold-primary);
+        }
+
+        .count-box span {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--dark-accent);
+        }
+
+        .count-box small {
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            color: var(--gold-primary);
+        }
+
+        /* --- DETAILS / VENUE --- */
+        .venue-card {
+            background: white;
+            padding: 50px;
+            border-radius: 2px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.03);
+            margin-top: 60px;
+        }
+
+        .btn-map {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 35px;
+            background-color: var(--gold-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            transition: 0.4s;
+        }
+
+        .btn-map:hover {
+            background-color: var(--dark-accent);
+            transform: translateY(-5px);
+        }
+
+        /* Responsiveness */
+        @media (max-width: 600px) {
+            .hero::after { inset: 10px; }
+            .content-section { padding: 60px 15px; }
+            .countdown-container { gap: 8px; }
+            .count-box { width: 70px; padding: 15px 5px; }
+            .venue-card { padding: 30px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="reveal">
+            <p class="save-the-date">Save Our Date</p>
+            <h1 class="couple-names">Savio & Rose</h1>
+            <p style="font-family: 'Playfair Display'; font-style: italic; font-size: 1.2rem;">Are tying the knot</p>
+            <p class="hero-date">22 . 02 . 2026</p>
+        </div>
+    </section>
+
+    <!-- Invitation Message -->
+    <section class="content-section">
+        <div class="reveal">
+            <h2 class="section-title">The Wedding</h2>
+            <p class="invite-text">
+                "Two hearts, one soul, one beautiful journey begins."<br><br>
+                We invite you to share in our joy as we exchange vows and celebrate the beginning of our new life together.
+            </p>
+        </div>
+
+        <!-- Countdown -->
+        <div class="countdown-container reveal">
+            <div class="count-box">
+                <span id="days">00</span>
+                <small>Days</small>
+            </div>
+            <div class="count-box">
+                <span id="hours">00</span>
+                <small>Hrs</small>
+            </div>
+            <div class="count-box">
+                <span id="mins">00</span>
+                <small>Mins</small>
+            </div>
+            <div class="count-box">
+                <span id="secs">00</span>
+                <small>Secs</small>
+            </div>
+        </div>
+
+        <!-- Venue Details -->
+        <div class="venue-card reveal">
+            <h3 style="font-family: 'Playfair Display'; margin-bottom: 15px;">Main Ceremony</h3>
+            <p><strong>Eram International Convention Center</strong></p>
+            <p>Aluva, thottumugham</p>
+            <p style="margin-top: 10px; color: var(--gold-primary);">Reception to Follow at 7:00 PM</p>
+            
+            <a href="https://maps.app.goo.gl/2sXN7oPVK8qKudh48" target="_blank" class="btn-map">Open Map Location</a>
+        </div>
+    </section>
+
+    <script>
+        // 1. SCROLL REVEAL LOGIC
+        const reveals = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        reveals.forEach(el => revealObserver.observe(el));
+
+        // 2. COUNTDOWN TIMER LOGIC
+        const weddingDate = new Date("Aug 22, 2026 10:00:00").getTime();
+
+        const timerFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("mins").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("secs").innerText = seconds.toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(timerFunction);
+                document.querySelector(".countdown-container").innerHTML = "<h3>The Celebration Begins!</h3>";
+            }
+        }, 1000);
+
+        // Initial trigger for hero section
+        window.onload = () => {
+            document.querySelector('.hero .reveal').classList.add('active');
+        };
+    </script>
+</body>
+</html>
