@@ -13,7 +13,7 @@
             --gold-light: #f1d299;
             --dark-accent: #2c2c2c;
             --bg-cream: #fdfbf7;
-            --transition-slow: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         * {
@@ -28,13 +28,16 @@
             color: var(--dark-accent);
             overflow-x: hidden;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Smooth Scroll Animation Classes */
+        /* Optimized Smooth Scroll Animation Classes */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px); /* Reduced distance to lower layout computation stress */
             transition: var(--transition-slow);
+            will-change: transform, opacity; /* Hints browser to prepare GPU optimization */
         }
 
         .reveal.active {
@@ -53,12 +56,13 @@
             text-align: center;
             color: white;
             padding: 20px;
-            background-color: #2c2c2c; /* Instant fallback background color */
+            background-color: #2c2c2c; 
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                         url('DSC05772.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: scroll; /* Switched to scroll to stop lag and fix mobile stutter */
+            background-attachment: scroll; 
+            transform: translateZ(0); /* Forces GPU hardware acceleration layers */
         }
 
         .hero::after {
@@ -98,6 +102,7 @@
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
+            transform: translateZ(0);
         }
 
         .section-title {
@@ -243,7 +248,7 @@
                     entry.target.classList.add('active');
                 }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.15 }); // Optimized threshold calculation
 
         reveals.forEach(el => revealObserver.observe(el));
 
