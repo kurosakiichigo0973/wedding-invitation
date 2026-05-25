@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation | Savio & Rose Style</title>
     
+    <meta property="og:title" content="Wedding Invitation | Savio & Rose" />
+    <meta property="og:description" content="We invite you to share in our joy as we exchange vows and celebrate the beginning of our new life together. Save our date: 22.08.2026." />
+    <meta property="og:image" content="https://kurosakiichigo0973.github.io/wedding-invitation/DSC05772.jpg" />
+    <meta property="og:url" content="https://kurosakiichigo0973.github.io/wedding-invitation/" />
+    <meta property="og:type" content="website" />
+
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <style>
@@ -35,9 +41,9 @@
         /* Optimized Smooth Scroll Animation Classes */
         .reveal {
             opacity: 0;
-            transform: translateY(20px); /* Reduced distance to lower layout computation stress */
+            transform: translateY(20px);
             transition: var(--transition-slow);
-            will-change: transform, opacity; /* Hints browser to prepare GPU optimization */
+            will-change: transform, opacity;
         }
 
         .reveal.active {
@@ -62,7 +68,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: scroll; 
-            transform: translateZ(0); /* Forces GPU hardware acceleration layers */
+            transform: translateZ(0);
         }
 
         .hero::after {
@@ -248,7 +254,7 @@
                     entry.target.classList.add('active');
                 }
             });
-        }, { threshold: 0.15 }); // Optimized threshold calculation
+        }, { threshold: 0.15 });
 
         reveals.forEach(el => revealObserver.observe(el));
 
